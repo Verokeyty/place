@@ -1,6 +1,8 @@
 package com.place
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -27,10 +29,10 @@ class MainActivity : AppCompatActivity() {
         val initializeApp = FirebaseApp.initializeApp(this)
         auth = Firebase.auth
 
-        binding.btRegister.setOnClickListener { haceRegistro() }
-        binding.btLogin.setOnClickListener { haceLogin() }
+        binding.imageButton.setOnClickListener { haceRegistro() }
+        binding.imageButton2.setOnClickListener { haceLogin() }
 
-        setContenView(R.layout.activity_main)
+
 
 
     }
