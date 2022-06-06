@@ -1,4 +1,5 @@
-package com.place.ui.gallery
+
+package com.place.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
