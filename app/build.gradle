@@ -42,10 +42,9 @@ android {
     }
 }
 
-android {
+android{
 
     viewBinding.enabled = true
-0    buildToolsVersion '30.0.3'
 
 }
 
