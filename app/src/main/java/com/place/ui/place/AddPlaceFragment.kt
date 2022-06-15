@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.place.R
 import com.place.databinding.FragmentPlaceBinding
 import com.place.ui.viewmodel.PlaceViewModel
+import java.util.zip.Inflater
 
-class PlaceFragment : Fragment() {
+class AddPlaceFragment : Fragment() {
 
     private lateinit var placeViewModel: PlaceViewModel
 
@@ -31,4 +33,6 @@ class PlaceFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
+
