@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">place</string>
+    <string name="tv_correo">Correo</string>
+    <string name="tv_clave">Contraseña</string>
+    <string name="msg_fallo_login">"Error al registrar el usuario "</string>
+    <string name="msg_fallo_registro">"Error al registrarse "</string>
+    <string name="title_activity_principal">Principal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_place">Place</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msg_nombre">Nombre del lugar</string>
+    <string name="msg_correo">Correo (abc@abc.com)</string>
+    <string name="msg_Telefono">Teléfono (0000-0000)</string>
+    <string name="msg_web">Link</string>
+    <string name="bt_agregar">Agregar</string>
+    <string name="bt_actualizar">Actualizar</string>
+
+    <string name="placeAdded">Place agregado</string>
+    <string name="noData">Faltan datos</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_place">
+
+    <fragment
+        android:id="@+id/nav_place"
+        android:name="com.place.ui.place.PlaceFragment"
+        android:label="@string/menu_place"
+        tools:layout="@layout/fragment_place" >
+        <action
+            android:id="@+id/action_nav_place_to_addPlaceFragment"
+            app:destination="@id/addPlaceFragment" />
+        <action
+            android:id="@+id/action_nav_place_to_updatePlaceFragment"
+            app:destination="@id/updatePlaceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.place.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.place.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/addPlaceFragment"
+        android:name="com.place.ui.place.AddPlaceFragment"
+        android:label="fragment_add_place"
+        tools:layout="@layout/fragment_add_place" >
+        <action
+            android:id="@+id/action_addPlaceFragment_to_nav_place"
+            app:destination="@id/nav_place" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePlaceFragment"
+        android:name="com.place.ui.place.UpdatePlaceFragment"
+        android:label="fragment_update_place"
+        tools:layout="@layout/fragment_update_place" >
+
+        <argument
+            android:name="place"
+            app:argType="com.place.model.Place" />
+    </fragment>
+</navigation>
