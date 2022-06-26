@@ -2,6 +2,7 @@ package com.place
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -10,6 +11,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.place.databinding.ActivityPrincipalBinding
 
 
@@ -47,7 +50,17 @@ class Principal : AppCompatActivity() {
         menuInflater.inflate(R.menu.principal, menu)
         return true
     }
-
+   // Recorte 011: exit
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_logoff -> {
+                Firebase.auth.signOut()
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_principal)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

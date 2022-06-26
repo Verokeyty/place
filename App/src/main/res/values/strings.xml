@@ -22,8 +22,11 @@
     <string name="msg_Telefono">Teléfono (0000-0000)</string>
     <string name="msg_web">Link</string>
     <string name="bt_agregar">Agregar</string>
+    <string name="delete">Elimina Lugar</string>
     <string name="bt_actualizar">Actualizar</string>
-
     <string name="placeAdded">Place agregado</string>
     <string name="noData">Faltan datos</string>
+    <string name="seguroBorrar">Está seguro?</string>
+    <string name="si">sí</string>
+    <string name="no">No</string>
 </resources>

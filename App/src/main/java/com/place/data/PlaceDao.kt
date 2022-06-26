@@ -8,13 +8,13 @@ import com.place.model.Place
 
 interface PlaceDao {
     @Insert(onConflict= OnConflictStrategy.IGNORE)
-    suspend fun addPlace (place: Place)
+     fun addPlace (place: Place)
 
     @Update(onConflict= OnConflictStrategy.IGNORE)
-    suspend fun updatePlace (place: Place)
+    fun updatePlace (place: Place)
     
     @Delete
-    suspend fun deletePlace(place: Place)
+   fun deletePlace(place: Place)
 
     @Query ( "SELECT * FROM PLACE")
     fun getAllData() : LiveData<List<Place>>

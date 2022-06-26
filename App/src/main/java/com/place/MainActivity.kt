@@ -81,6 +81,18 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,Principal::class.java)
             startActivity(intent)
         }
+
+
     }
+
+   //verifica autentificado
+
+   public override  fun onStart(){
+       super.onStart()
+       //obtenermos usuario actual
+       val usuario= auth.currentUser
+       actualiza(usuario)
+   }
+
 
 }
