@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/updatePlaceFragment"
         android:name="com.place.ui.place.UpdatePlaceFragment"
-        android:label="fragment_update_place"
+        android:label="@string/bt_actualizar"
         tools:layout="@layout/fragment_update_place" >
 
         <argument

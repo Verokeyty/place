@@ -1,8 +1,11 @@
 package com.place.ui.place
 
 import android.app.AlertDialog
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
-import android.provider.SyncStateContract.Helpers.update
+import android.Manifest
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
@@ -12,8 +15,10 @@ import androidx.navigation.fragment.navArgs
 import com.place.R
 import com.place.databinding.FragmentUpdatePlaceBinding
 
+import android.provider.SyncStateContract.Helpers.update
 import com.place.model.Place
 import com.place.ui.viewmodel.PlaceViewModel
+
 
 
 class UpdatePlaceFragment : Fragment() {
@@ -40,11 +45,93 @@ class UpdatePlaceFragment : Fragment() {
         binding.etTelefono.setText(arg.place.telefono)
         binding.etCorreo.setText(arg.place.correo)
         binding.etWeb.setText(arg.place.link)
+
+
+        binding.tvAltura.text=arg.place.altura.toString()
+
+        binding.tvLatitud.text=arg.place.latidud.toString()
+
+        binding.tvLongitud.text=arg.place.longitud.toString()
+
+
         binding.btActualizar.setOnClickListener { updatePlace() }
+
+        binding.btEmail.setOnClickListener{escribirCorreo()}
+        binding.btPhone.setOnClickListener{llamarPlace()}
+
+       binding.etWeb.setOnClickListener{verweb()}
+       /*  binding.btWhatsapp.setOnClickListener{enviarWhat()}
+        binding.btLocation.setOnClickListener{verMapa()}*/
+
+
+
 
 
         setHasOptionsMenu(true)
              return binding.root
+
+    }
+
+    private fun verweb() {
+        val recurso= binding.etWeb.text.toString()
+        if (recurso.isNotEmpty()){
+            //se abre el sitio
+
+             val rutina = Intent(Intent.ACTION_VIEW, Uri.parse("http://$recurso"))
+
+            startActivity(rutina) //levanta el browser y se el sitio
+        }else {
+            Toast.makeText(requireContext(),
+                getString(R.string.msg_datos),Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
+    private fun llamarPlace() {
+        val recurso= binding.etTelefono.text.toString()
+        if (recurso.isNotEmpty()) {
+
+            //se activa correo
+            val rutina = Intent(Intent.ACTION_CALL)
+            rutina.data = Uri.parse("tel:$recurso")
+            if (
+                requireActivity().checkSelfPermission(Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED){
+
+            //solicitar permiso
+                requireActivity()
+                    .requestPermissions(arrayOf(Manifest.permission.CALL_PHONE), 105)
+        }else{//se tiene permiso
+            requireActivity().startActivity(rutina)
+
+        }
+
+        }else {
+            Toast.makeText(requireContext(),
+                getString(R.string.msg_datos),Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
+    private fun escribirCorreo() {
+        val recurso= binding.etCorreo.text.toString()
+        if (recurso.isNotEmpty()){
+
+           //se activa correo
+            val rutina = Intent(Intent.ACTION_SEND)
+            rutina.type="message/rfc822"
+            rutina.putExtra(Intent.EXTRA_EMAIL, arrayOf(recurso))
+            rutina.putExtra(Intent.EXTRA_SUBJECT,
+            getString(R.string.msg_saludos)+" "+binding.etNombre.text)
+            rutina.putExtra(Intent.EXTRA_TEXT,
+            getString(R.string.msg_mensaje_correo))
+            startActivity(rutina) //levanta el correo y lo presenta para modificar y enviar
+        }else {
+            Toast.makeText(requireContext(),
+                getString(R.string.msg_datos),Toast.LENGTH_SHORT)
+                .show()
+        }
+
 
     }
 
