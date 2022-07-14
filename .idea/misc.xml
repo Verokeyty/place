@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Git/place/App/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/activity_principal.xml" value="0.1" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/app_bar_principal.xml" value="0.1" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/content_principal.xml" value="0.1" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/fragment_add_place.xml" value="0.2971014492753623" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/fragment_gallery.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/fragment_place.xml" value="0.1" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/fragment_slideshow.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/fragment_update_place.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/nav_header_principal.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/layout/place_fila.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/menu/activity_main_drawer.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/menu/delete_menu.xml" value="0.24114583333333334" />
+        <entry key="..\:/Git/place/App/src/main/res/menu/principal.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/vcalderon/AndroidStudioProjects/place/App/src/main/res/drawable/ic_baseline_email_24.xml" value="0.158" />
         <entry key="..\:/Users/vcalderon/AndroidStudioProjects/place/App/src/main/res/drawable/ic_delete.xml" value="0.153" />
         <entry key="..\:/Users/vcalderon/AndroidStudioProjects/place/App/src/main/res/drawable/ic_logoof.xml" value="0.198" />

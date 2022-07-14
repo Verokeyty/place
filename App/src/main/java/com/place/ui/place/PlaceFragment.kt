@@ -11,27 +11,46 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.place.R
 import com.place.adapter.PlaceAdapter
 import com.place.databinding.FragmentPlaceBinding
+
 import com.place.ui.viewmodel.PlaceViewModel
+import java.lang.Exception
 
 class PlaceFragment : Fragment() {
+
+    private var _binding: FragmentPlaceBinding? = null
+
+
     private lateinit var placeViewModel: PlaceViewModel
 
-    private var binding: FragmentPlaceBinding? = null
-    private val _binding get() = binding!!
+
+
+
+    private val binding get() = _binding!!
+
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         placeViewModel = ViewModelProvider(this )[PlaceViewModel::class.java]
-        binding= FragmentPlaceBinding.inflate(inflater, container, false)
+        _binding= FragmentPlaceBinding.inflate(inflater, container, false)
 
 // se programa la accion  add lugar
         binding.addPlaceBotton.setOnClickListener{
-            findNavController().navigate(R.id.action_nav_place_to_addPlaceFragment)
+            try{
+                println("hola")
+                findNavController().navigate(R.id.action_nav_place_to_addPlaceFragment)
+            }catch (ex:Exception){
+
+            }
+
         }
 
+
+
         // activar reciclador
-        val placeAdapter: PlaceAdapter
+        val placeAdapter=PlaceAdapter()
         val reciclador = binding.reciclador
 
         reciclador.adapter= placeAdapter
@@ -48,7 +67,7 @@ class PlaceFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding= null
+        _binding= null
     }
 
 }

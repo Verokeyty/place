@@ -1,4 +1,4 @@
-package com.place.ui.place
+package com.place.ui.slideshow
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.place.databinding.FragmentPlaceBinding
+
 import com.place.ui.viewmodel.PlaceViewModel
 
 class PlaceFragment : Fragment() {
@@ -28,11 +29,12 @@ class PlaceFragment : Fragment() {
 
         _binding = FragmentPlaceBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
+/**
         val textView: TextView = binding.textHome
         placeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+        */
         return root
     }
 

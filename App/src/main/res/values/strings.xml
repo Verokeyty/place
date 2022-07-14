@@ -2,8 +2,8 @@
     <string name="app_name">place</string>
     <string name="tv_correo">Correo</string>
     <string name="tv_clave">Contraseña</string>
-    <string name="msg_fallo_login">"Error al registrar el usuario "</string>
-    <string name="msg_fallo_registro">"Error al registrarse "</string>
+    <string name="msg_fallo_login">Error al registrar el usuario</string>
+    <string name="msg_fallo_registro">Error al registrarse</string>
     <string name="title_activity_principal">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

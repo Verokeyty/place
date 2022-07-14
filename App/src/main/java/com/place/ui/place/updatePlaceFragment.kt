@@ -155,7 +155,7 @@ class UpdatePlaceFragment : Fragment() {
         //Acciones a ejecutar en caso de si
         consulta.setPositiveButton(getString(R.string.si)){ _,_->
             placeViewModel.deletePlace(arg.place)
-            findNavController().navigate(R.id.action_updatePlaceFragment_to_nav_place)
+            findNavController().navigate(R.id.action_nav_place_to_updatePlaceFragment)
         }
         consulta.setNegativeButton(getString(R.string.no)) { _,_->}
         consulta.create().show()    }
@@ -168,11 +168,14 @@ class UpdatePlaceFragment : Fragment() {
         val link=binding.etWeb.text.toString()
         if (nombre.isNotEmpty()){
 
-          val place= Place(arg.place.id, nombre,correo,telefono,link, 0.0, 0.0, 0.0,"", "")
-          PlaceViewModel.update(place)
-            Toast.makeText(requireContext().getString(R.string.placeAdded), Toast.LENGTH_SHORT).show()
+          val place= Place(arg.place.id, nombre,correo,telefono,link, 0.0, 0.0, 0.0,"", "");
+            placeViewModel.updatePlace(place);
+            Toast.makeText(requireContext(),"Actualizado",Toast.LENGTH_SHORT,).show();
+
+
+
             findNavController().navigate(R.id.action_nav_place_to_updatePlaceFragment)
-            Toast.makeText(requireContext().getString(R.string.noData), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Faltan datos", Toast.LENGTH_SHORT).show()
         } else{
 
         }

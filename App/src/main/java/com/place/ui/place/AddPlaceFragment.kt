@@ -44,10 +44,10 @@ class AddPlaceFragment : Fragment() {
 
           val place= Place(0, nombre,correo,telefono,link, 0.0, 0.0, 0.0,"", "")
           placeViewModel.addPlace(place)
-            Toast.makeText(requireContext().getString(R.string.placeAdded), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),getString(R.string.placeAdded), Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addPlaceFragment_to_nav_place)
     } else{
-            Toast.makeText(requireContext().getString(R.string.noData), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),getString(R.string.noData), Toast.LENGTH_SHORT).show()
 
         }
     }

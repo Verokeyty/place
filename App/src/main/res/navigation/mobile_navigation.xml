@@ -7,13 +7,14 @@
 
     <fragment
         android:id="@+id/nav_place"
-        android:name="com.place.ui.place.PlaceFragment"
+        android:name="com.place.ui.slideshow.PlaceFragment"
         android:label="@string/menu_place"
         tools:layout="@layout/fragment_place" >
         <action
             android:id="@+id/action_nav_place_to_addPlaceFragment"
             app:destination="@id/addPlaceFragment" />
         <action
+
             android:id="@+id/action_nav_place_to_updatePlaceFragment"
             app:destination="@id/updatePlaceFragment" />
     </fragment>
@@ -31,7 +32,7 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/addPlaceFragment"
-        android:name="com.place.ui.place.AddPlaceFragment"
+        android:name="com.place.ui.slideshow.AddPlaceFragment"
         android:label="fragment_add_place"
         tools:layout="@layout/fragment_add_place" >
         <action

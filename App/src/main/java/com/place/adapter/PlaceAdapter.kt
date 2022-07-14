@@ -6,7 +6,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.place.databinding.PlaceFilaBinding
 import com.place.model.Place
-import com.place.ui.place.PlaceFragmentDirections
+//import com.place.ui.place.PlaceFragmentDirections
 
 class PlaceAdapter : RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder>(){
 
@@ -20,12 +20,13 @@ class PlaceAdapter : RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder>(){
          itemBinding.tvCorreo.text= place.correo
          itemBinding.tvTelefono.text= place.telefono
          itemBinding.tvWeb.text= place.link
+         /**
          itemBinding.vistaFila.setOnClickListener {
              val accion= PlaceFragmentDirections
                  .actionNavPlaceToUpdatePlaceFragment(place)
              itemView.findNavController().navigate(accion)
          }
-
+*/
 
      }
 
